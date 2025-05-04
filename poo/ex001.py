@@ -20,22 +20,19 @@ class Vehicle:
         
         def display(self):
                 return f"---------------------------------\nVeículo {self.id}\n\nTipo: {self.type}\nMarca: {self.make}\nModelo: {self.model}\nAno: {self.year}"
+        
+        def create(self):
+                return self
 
 class Car(Vehicle):
         def __init__(self, id: int, make: VehicleMake, model: str, year: int):
                 super().__init__(type="Carro", id=id, make=make, model=model, year=year)
                 self.id = id
-
-        def create(self):
-                return self
         
 class Motorcycle(Vehicle):
         def __init__(self, id: int, make: VehicleMake, model: str, year: int):
                 super().__init__(type="Moto", id=id, make=make, model=model, year=year)
                 self.id = id
-
-        def create(self):
-                return self
 
 car1 = Car(1, "Ford", "Ranger Raptor", 2025).create()
 car2 = Car(2, "Toyota", "Hilux GR-Sport", 2025).create()
